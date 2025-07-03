@@ -11,6 +11,8 @@ import Pricing from './components/Pricing';
 import Process from './components/Process';
 import Team from './components/Team';
 import  Award  from './components/Award';
+
+
 function App() {
   return (
   <div>
@@ -21,8 +23,9 @@ function App() {
     <Services/>
     <Experience/>
      <Process/>
+
      <Award/>
-     <Team/>
+     <Team/>s
     <Pricing/>
     <Footer/>
     <EndFooter/>
