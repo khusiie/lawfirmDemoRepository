@@ -6,7 +6,7 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <header className="bg-white shadow-sm">
+    <header className="fixed top-0 left-0 w-full z-50 bg-white shadow-sm">
       <div className="flex items-center justify-between px-4 md:px-8 py-4">
         {/* Logo */}
         <div className="flex items-center space-x-2">
