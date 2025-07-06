@@ -1,19 +1,29 @@
 "use client";
 import { useState } from "react";
 import { PhoneCall, Menu, X } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const { pathname } = location;
+
+  const linkClasses = (path) =>
+    `font-medium uppercase text-sm cursor-pointer ${
+      pathname === path
+        ? "text-[#C4A27A]"
+        : "text-[#0D1B2A] hover:text-[#C4A27A]"
+    }`;
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-white shadow-sm">
+    <header className="w-full bg-white shadow-sm z-40 relative">
       <div className="flex items-center justify-between px-4 md:px-8 py-4">
         {/* Logo */}
         <div className="flex items-center space-x-2">
           <img src="/assets/header-logo.png" alt="Lawfic Logo" className="h-[60px]" />
         </div>
 
-        {/* Hamburger Icon - visible on mobile */}
+        {/* Hamburger Icon - Mobile */}
         <button
           className="md:hidden"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -21,17 +31,17 @@ export default function Navbar() {
           {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
 
-        {/* Navigation (Desktop) */}
+        {/* Navigation - Desktop */}
         <nav className="hidden md:flex space-x-6 items-center font-marcellus">
-          <span className="text-[#C4A27A] font-medium uppercase text-sm cursor-pointer">Home</span>
-          <span className="text-[#0D1B2A] font-medium uppercase text-sm cursor-pointer hover:text-[#C4A27A]">Pages</span>
-          <span className="text-[#0D1B2A] font-medium uppercase text-sm cursor-pointer hover:text-[#C4A27A]">Service</span>
-          <span className="text-[#0D1B2A] font-medium uppercase text-sm cursor-pointer hover:text-[#C4A27A]">Portfolio</span>
-          <span className="text-[#0D1B2A] font-medium uppercase text-sm cursor-pointer hover:text-[#C4A27A]">Blog</span>
-          <span className="text-[#0D1B2A] font-medium uppercase text-sm cursor-pointer hover:text-[#C4A27A]">Contact Us</span>
+          <Link to="/" className={linkClasses("/")}>Home</Link>
+          <Link to="/about" className={linkClasses("/about")}>About</Link>
+          <Link to="/services" className={linkClasses("/services")}>Service</Link>
+          <Link to="/portfolio" className={linkClasses("/portfolio")}>Portfolio</Link>
+          <Link to="/blog" className={linkClasses("/blog")}>Blog</Link>
+          <Link to="/contact" className={linkClasses("/contact")}>Contact Us</Link>
         </nav>
 
-        {/* Call Us */}
+        {/* Call Us Info */}
         <div className="hidden md:flex items-center space-x-3">
           <PhoneCall className="text-[#C4A27A]" size={28} />
           <div className="flex flex-col leading-tight">
@@ -41,16 +51,17 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Nav */}
+      {/* Mobile Navigation */}
       {isMobileMenuOpen && (
         <nav className="md:hidden flex flex-col px-4 pb-4 space-y-2">
-          <span className="text-[#C4A27A] font-medium uppercase text-sm cursor-pointer">Home</span>
-          <span className="text-[#0D1B2A] font-medium uppercase text-sm cursor-pointer">Pages</span>
-          <span className="text-[#0D1B2A] font-medium uppercase text-sm cursor-pointer">Service</span>
-          <span className="text-[#0D1B2A] font-medium uppercase text-sm cursor-pointer">Portfolio</span>
-          <span className="text-[#0D1B2A] font-medium uppercase text-sm cursor-pointer">Blog</span>
-          <span className="text-[#0D1B2A] font-medium uppercase text-sm cursor-pointer">Contact Us</span>
-          <div className="flex items-center space-x-2 pt-2 border-t pt-4">
+          <Link to="/" className={linkClasses("/")}>Home</Link>
+          <Link to="/about" className={linkClasses("/about")}>About</Link>
+          <Link to="/services" className={linkClasses("/services")}>Service</Link>
+          <Link to="/portfolio" className={linkClasses("/portfolio")}>Portfolio</Link>
+          <Link to="/blog" className={linkClasses("/blog")}>Blog</Link>
+          <Link to="/contact" className={linkClasses("/contact")}>Contact Us</Link>
+
+          <div className="flex items-center space-x-2 pt-4 border-t">
             <PhoneCall className="text-[#C4A27A]" size={24} />
             <div className="flex flex-col leading-tight">
               <span className="text-sm text-[#0D1B2A] font-semibold">CALL US</span>
