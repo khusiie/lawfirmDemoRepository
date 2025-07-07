@@ -12,14 +12,14 @@ export default function PageHeader() {
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center justify-center text-center px-4">
-        <h1 className="text-4xl sm:text-5xl font-bold mb-4">About Us</h1>
+        <h1 className="text-4xl sm:text-5xl font-bold mb-4">Contact Us</h1>
         <div className="flex items-center gap-2 text-sm sm:text-base text-white/80">
           <Home className="w-5 h-5 text-white" />
           <Link to="/" className="hover:underline text-white">
             Home
           </Link>
           <span className="text-white">›</span>
-          <span className="text-[#c79d7c] font-medium">About Us</span>
+          <span className="text-[#c79d7c] font-medium">Contact Us</span>
         </div>
       </div>
     </section>
