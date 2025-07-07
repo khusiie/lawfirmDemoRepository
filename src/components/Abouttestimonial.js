@@ -1,65 +1,62 @@
-'use client';
+import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 
-export default function Testimonials() {
-  const testimonials = [
-    {
-      name: "Iliena Brown",
-      type: "FAMILY LAW",
-      image: "/iliena.jpg",
-      rating: 5,
-      message:
-        "Law is a system of rules, long-established practices and traditions that are established by to regulate behavior and maintain order within a society. Concerned with offenses against society customary law.",
-    },
-    {
-      name: "Danial Frankie",
-      type: "INSURANCE LAW",
-      image: "/danial.jpg",
-      rating: 5,
-      message:
-        "Law is a system of rules, long-established practices and traditions that are established by to regulate behavior and maintain order within a society. Concerned with offenses against society customary law.",
-    },
-  ];
-
+export default function TestimonialSection() {
   return (
-    <section className="bg-white py-16 px-4 sm:px-6 lg:px-20 text-center font-marcellus">
-      <p className="text-sm tracking-widest text-[#a68160] font-semibold mb-2 uppercase">
-        — Our Testimonials —
-      </p>
+    <section className="py-20 px-4 sm:px-8 bg-white text-[#0f1b3d]">
+      <div className="max-w-7xl mx-auto">
+        {/* Heading */}
+        <div className="text-center mb-12">
+          <p className="text-sm tracking-widest text-[#a68160] font-semibold mb-2">
+            — TESTIMONIAL —
+          </p>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
+            Our Happy Client's Review
+          </h2>
+        </div>
 
-      <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-[#0f1b3d] leading-snug mb-14">
-        Our Streamlined Legal Process Of<br className="hidden sm:block" />
-        <span className="text-[#0f1b3d]"> Success</span>
-      </h2>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {testimonials.map((item, idx) => (
-          <div
-            key={idx}
-            className="bg-[#fbf7f4] p-6 sm:p-8 rounded-xl text-left shadow-md hover:shadow-lg transition-all duration-300"
-          >
-            <div className="flex items-center gap-4 mb-5">
-              <img
-                src={item.image}
-                alt={item.name}
-                className="w-16 h-16 rounded-full object-cover"
-              />
-              <div>
-                <h4 className="text-lg font-bold text-[#0f1b3d]">{item.name}</h4>
-                <p className="text-sm text-[#a68160] tracking-wide">{item.type}</p>
-              </div>
+        {/* Testimonial Box */}
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-16">
+          {/* Quote Circle & Profile */}
+          <div className="relative">
+            <div className="w-48 h-48 sm:w-60 sm:h-60 rounded-full border border-gray-200 flex items-center justify-center">
+              <Quote className="w-20 h-20 text-[#bd9b84]" />
             </div>
-            <p className="text-gray-600 text-sm sm:text-base leading-relaxed mb-4">
-              {item.message}
-            </p>
-            <div className="flex space-x-1 text-yellow-400 text-xl">
-              {Array.from({ length: item.rating }, (_, i) => (
-                <span key={i}>★</span>
-              ))}
+            <div className="absolute bottom-0 right-0 translate-x-4 translate-y-4">
+              <img
+                src="/client.jpg" // Ensure this is in your public folder or use a URL
+                width={80}
+                height={80}
+                alt="John Smith"
+                className="rounded-full border-4 border-white shadow-md object-cover"
+              />
             </div>
           </div>
-        ))}
-      </div>
 
+          {/* Testimonial Content */}
+          <div className="max-w-xl text-center lg:text-left">
+            <div className="flex justify-center lg:justify-start mb-4">
+              {[...Array(5)].map((_, i) => (
+                <span key={i} className="text-yellow-500 text-xl">★</span>
+              ))}
+            </div>
+            <p className="text-gray-500 italic text-lg leading-relaxed mb-4">
+              Law is a system of rules and guidelines established by a society or governing authority to regulate behavior, maintain order, and provide justice. It sets standards of conduct that individuals and organizations consequences for non-compliance.
+            </p>
+            <h4 className="text-xl font-bold">Jonh Smith</h4>
+            <p className="text-[#a68160] font-medium mt-1">Family Lawyer</p>
+          </div>
+        </div>
+
+        {/* Navigation Buttons */}
+        <div className="flex justify-center gap-4 mt-12">
+          <button className="w-12 h-12 bg-[#0f1b3d] text-white rounded-md flex items-center justify-center hover:bg-[#1a264f]">
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+          <button className="w-12 h-12 bg-[#bd9b84] text-white rounded-md flex items-center justify-center hover:bg-[#a07e65]">
+            <ChevronRight className="w-5 h-5" />
+          </button>
+        </div>
+      </div>
     </section>
   );
 }

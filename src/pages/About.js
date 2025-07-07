@@ -7,6 +7,8 @@ import Abouttestimonial from '../components/Abouttestimonial';
 import AboutHeroSec from '../components/AboutHeroSec';
 import Aboutaboutus from '../components/Aboutaboutus';
 import Aboutexperience from '../components/Aboutexperience';
+import Aboutchoose from '../components/Aboutchoose';
+import Aboutprogress from '../components/Aboutprogress';
 const Aboutus = () => {
 
   return (
@@ -16,6 +18,8 @@ const Aboutus = () => {
       <AboutHeroSec/>
       <Aboutaboutus/>
       <Aboutexperience/>
+      <Aboutchoose/>
+      <Aboutprogress/>
       <Abouttestimonial/>
       <Footer/>
       <EndFooter />
