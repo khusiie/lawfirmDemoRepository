@@ -4,17 +4,17 @@ const blogPosts = [
   {
     category: 'Divorce',
     title: 'Principle Of Precedent To Establish Consistency',
-    image: '/blog1.jpg',
+    image: '/j.jpg',
   },
   {
     category: 'Domestic Violence',
     title: 'Common Law Systems Concept Decisions Courts',
-    image: '/blog2.jpg',
+    image: '/k.jpg',
   },
   {
     category: 'Family Law',
     title: 'Precedents Are Decisions Made By Courts Within',
-    image: '/blog3.jpg',
+    image: '/l.jpg',
   },
 ];
 
