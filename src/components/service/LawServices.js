@@ -26,9 +26,10 @@ const LegalServicesPage = () => {
   ];
 
   const [activeIndex, setActiveIndex] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState(2);
 
   return (
-   <div className="max-w-screen-xl mx-auto px-6 md:px-10 lg:px-20 py-8 font-marcellus">
+    <div className="max-w-screen-xl mx-auto px-6 md:px-10 lg:px-20 py-8 font-marcellus">
       {/* Hero Section */}
       <div className="flex flex-col md:flex-row gap-6">
         {/* Sidebar */}
@@ -36,8 +37,11 @@ const LegalServicesPage = () => {
           {categories.map((cat, idx) => (
             <button
               key={idx}
-              className={`block w-full text-left px-4 py-3 mb-2 rounded ${
-                idx === 2 ? "bg-[#c2a78f] text-white" : "bg-white text-black"
+              onClick={() => setSelectedCategory(idx)}
+              className={`block w-full text-left px-4 py-3 mb-2 rounded transition-all duration-300 ${
+                selectedCategory === idx
+                  ? "bg-[#c2a78f] text-white scale-[1.02]"
+                  : "bg-white text-black hover:bg-[#f0e8e2]"
               }`}
             >
               {cat}
@@ -48,24 +52,28 @@ const LegalServicesPage = () => {
         {/* Hero Image */}
         <div className="w-full md:w-2/3">
           <img
-            src="/team-photo.jpg" // Replace with your image path
+            src="/team-photo.jpg"
             alt="Law Team"
             className="rounded w-full h-auto object-cover"
           />
         </div>
       </div>
 
-      {/* Contact CTA */}
-      <div className="flex flex-col md:flex-row bg-white rounded-lg shadow p-6 mt-10 items-center gap-6">
-        <div className="md:w-1/2">
-          <h2 className="text-3xl font-serif text-gray-800">Didn’t get it?<br />Send us your questions.</h2>
-          <button className="mt-4 px-5 py-2 bg-[#c2a78f] text-white rounded">Contact Experts</button>
-        </div>
+      {/* Contact CTA Section with overlay on image */}
+      <div className="relative mt-10 rounded-lg overflow-hidden h-[350px] md:h-[400px]">
         <img
-          src="/lawyer-question.jpg" // Replace with your image path
+          src="/lawyer-question.jpg"
           alt="Ask a Lawyer"
-          className="rounded w-full md:w-auto"
+          className="w-full h-full object-cover"
         />
+        <div className="absolute inset-0 bg-black/40 flex flex-col justify-center px-6 md:px-12 lg:px-20">
+          <h2 className="text-white text-3xl md:text-4xl font-serif max-w-md leading-snug mb-4">
+            Didn’t get it?<br />Send Us Your Questions.
+          </h2>
+          <button className="bg-[#c2a78f] text-white px-6 py-3 rounded shadow w-fit">
+            Contact Experts
+          </button>
+        </div>
       </div>
 
       {/* Research Platforms */}
@@ -96,7 +104,7 @@ const LegalServicesPage = () => {
       {/* Legal Academic Section */}
       <div className="grid md:grid-cols-2 gap-6 mt-12 items-center">
         <img
-          src="/legal-meeting.jpg" // Replace with your image path
+          src="/legal-meeting.jpg"
           alt="Legal Academic"
           className="rounded"
         />
@@ -113,7 +121,7 @@ const LegalServicesPage = () => {
 
       {/* Accordion FAQs */}
       <div className="mt-12">
-        <h3 className="text-xl font-bold mb-4 ">Brief Introduction That Provides An Overview Of Your</h3>
+        <h3 className="text-xl font-bold mb-4">Brief Introduction That Provides An Overview Of Your</h3>
         <p className="text-gray-600 mb-6">
           Showcase examples of legal work like briefs, research, contracts, and problem-solving cases to show your versatility.
         </p>
