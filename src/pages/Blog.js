@@ -1,6 +1,7 @@
 import React from 'react';
 import TopHeader from '../components/topNavbar';
 import Navbar from '../components/Navbar';
+
 import Footer from '../components/Footer';
 import EndFooter from '../components/EndFooter';
 import HeroSection from '../components/blog/HeroSection';
@@ -12,7 +13,9 @@ const Blog = () => {
       <HeroSection/>
       <Footer/>
       <EndFooter/>
-    </div>
+
+</div>
+   
   );
 }
 

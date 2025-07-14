@@ -37,7 +37,11 @@ export default function Navbar() {
           <Link to="/about" className={linkClasses("/about")}>About</Link>
           <Link to="/services" className={linkClasses("/services")}>Service</Link>
           <Link to="/team" className={linkClasses("/team")}>Our Team</Link>
+
           <Link to="/blog" className={linkClasses("/blog")}>Blog</Link>
+
+            <Link to="/blog" className={linkClasses("/blog")}>Blog</Link>
+
           <Link to="/contact" className={linkClasses("/contact")}>Contact Us</Link>
         </nav>
 
@@ -57,7 +61,11 @@ export default function Navbar() {
           <Link to="/" className={linkClasses("/")}>Home</Link>
           <Link to="/about" className={linkClasses("/about")}>About</Link>
           <Link to="/services" className={linkClasses("/services")}>Service</Link>
+
             <Link to="/team" className={linkClasses("/team")}>Our Team</Link>
+
+          <Link to="/team" className={linkClasses("/portfolio")}>Team</Link>
+
           <Link to="/blog" className={linkClasses("/blog")}>Blog</Link>
           <Link to="/contact" className={linkClasses("/contact")}>Contact Us</Link>
 
