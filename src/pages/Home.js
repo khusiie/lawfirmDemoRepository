@@ -24,7 +24,7 @@ export default function Home() {
       </div>
 
       {/* Add top padding to avoid overlap */}
-      <div className="pt-[120px]">
+      <div className="pt-[120px] md:pt-[200px]">
         <HeroSection />
         <About />
         <Services />
