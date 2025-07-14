@@ -29,6 +29,7 @@ export default function ContactSection() {
           {/* Map Embed */}
           <iframe
             className="w-full h-64 rounded-md shadow"
+            title="Law firm location on Google Maps"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19801.150885160426!2d-0.12208402787224807!3d51.503324899999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604bfb4efbbd9%3A0x9c02be3aa39e44b4!2slastminute.com%20London%20Eye!5e0!3m2!1sen!2sin!4v1689278719580!5m2!1sen!2sin"
             loading="lazy"
             allowFullScreen
